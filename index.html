@@ -1,0 +1,1918 @@
+<!--
+ * @file: 
+ * @Date: 2020-07-28 09:12:03
+ * @author: manyao.zhu
+--> 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+    
+</head>
+<body onload="load()">
+  <div style="position: fixed; right: 0; top: .3em;">
+  <iframe src="https://ghbtns.com/github-btn.html?user=myliang&repo=x-spreadsheet&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+  </div>
+  <div id="x-spreadsheet-demo"></div>
+  <script>
+    function load(){
+      const colData = [
+    {
+      prop: 'code',
+      label: 'Partition Code',
+      width: '260px',
+      type: 'headerIcon',
+      hideSort: true,
+      treeIcon: true,
+    },
+    {
+      prop: 'partNo',
+      label: 'Part No',
+      width: '100px',
+    },
+    {
+      prop: 'type',
+      label: 'Type',
+      width: '200px',
+    },
+    {
+      prop: 'state',
+      label: 'State',
+      width: '140px',
+    },
+    {
+      prop: 'chineseName',
+      label: 'Chinese Part Name',
+      width: '160px',
+    },
+    {
+      prop: 'use',
+      label: 'Usage',
+      width: '140px',
+      type: 'userDefine',
+    },
+    {
+      prop: 'current',
+      label: 'Current Effectivity',
+      width: '200px',
+      type: 'userDefine',
+    },
+    {
+      prop: 'quantity',
+      label: 'Qty',
+      width: '100px',
+    },
+    {
+      prop: 'targetWeight',
+      label: 'Target Weight',
+      width: '100px',
+    },
+    {
+      prop: 'actualWeight',
+      label: 'Actual Weight',
+      width: '200px',
+    },
+    {
+      prop: 'rollUpWeight',
+      label: 'Roll Up Weight',
+      width: '200px',
+    },
+  ];
+    
+      var tableData = [
+  {
+    id: '1',
+    code: 'ET7.00.00.00',
+    partNo: 'V0070000',
+    type: 'AA',
+    state: 'Preliminary',
+    chineseName: '',
+    use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+    current: 'ET7:[G1.1-∞]',
+    quantity: '1.0',
+    targetWeight: '0.0',
+    actualWeight: '0.0',
+    rollUpWeight: '50.473',
+    children: [
+      {
+        id: '1-1',
+        code: 'HVC.00.00.00',
+        partNo: 'V005455',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '1-1-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '1-1-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '1-1-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '1-1-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '1-1-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '1-2',
+        code: 'CHS.00.00.00',
+        partNo: 'V0054556',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '1-2-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '1-2-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '1-2-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '1-2-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '1-2-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '1-3',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054558',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+      },
+      {
+        id: '1-4',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054560',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '1-4-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '1-4-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '1-4-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '1-4-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '1-4-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '1-5',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054559',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+      },
+      {
+        id: '1-6',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054557',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '1-6-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '1-6-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '1-6-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '1-6-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '1-6-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '1-7',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054555',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+      },
+      {
+        id: '1-8',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054553',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '1-8-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '1-8-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '1-8-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '1-8-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '1-8-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '2',
+    code: 'ET7.00.00.00',
+    partNo: 'V0070000',
+    type: 'AA',
+    state: 'Preliminary',
+    chineseName: '',
+    use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+    current: 'ET7:[G1.1-∞]',
+    quantity: '1.0',
+    targetWeight: '0.0',
+    actualWeight: '0.0',
+    rollUpWeight: '50.473',
+    children: [
+      {
+        id: '2-1',
+        code: 'HVC.00.00.00',
+        partNo: 'V005455',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '2-1-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '2-1-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '2-1-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '2-1-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '2-1-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '2-2',
+        code: 'CHS.00.00.00',
+        partNo: 'V0054556',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '2-2-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '2-2-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '2-2-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '2-2-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '2-2-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '2-3',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054558',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+      },
+      {
+        id: '2-4',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054560',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '2-4-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '2-4-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '2-4-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '2-4-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '2-4-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '2-5',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054559',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+      },
+      {
+        id: '2-6',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054557',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '2-6-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '2-6-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '2-6-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '2-6-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '2-6-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '2-7',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054555',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+      },
+      {
+        id: '2-8',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054553',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '2-8-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '2-8-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '2-8-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '2-8-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '2-8-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '3',
+    code: 'ET7.00.00.00',
+    partNo: 'V0070000',
+    type: 'AA',
+    state: 'Preliminary',
+    chineseName: '',
+    use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+    current: 'ET7:[G1.1-∞]',
+    quantity: '1.0',
+    targetWeight: '0.0',
+    actualWeight: '0.0',
+    rollUpWeight: '50.473',
+  },
+  {
+    id: '4',
+    code: 'ET7.00.00.00',
+    partNo: 'V0070000',
+    type: 'AA',
+    state: 'Preliminary',
+    chineseName: '',
+    use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+    current: 'ET7:[G1.1-∞]',
+    quantity: '1.0',
+    targetWeight: '0.0',
+    actualWeight: '0.0',
+    rollUpWeight: '50.473',
+  },
+  {
+    id: '5',
+    code: 'ET7.00.00.00',
+    partNo: 'V0070000',
+    type: 'AA',
+    state: 'Preliminary',
+    chineseName: '',
+    use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+    current: 'ET7:[G1.1-∞]',
+    quantity: '1.0',
+    targetWeight: '0.0',
+    actualWeight: '0.0',
+    rollUpWeight: '50.473',
+    children: [
+      {
+        id: '5-1',
+        code: 'HVC.00.00.00',
+        partNo: 'V005455',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '5-1-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '5-1-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '5-1-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '5-1-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '5-1-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '5-2',
+        code: 'CHS.00.00.00',
+        partNo: 'V0054556',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '5-2-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '5-2-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '5-2-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '5-2-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '5-2-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '5-3',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054558',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+      },
+      {
+        id: '5-4',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054560',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '5-4-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '5-4-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '5-4-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '5-4-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '5-4-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '5-5',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054559',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+      },
+      {
+        id: '5-6',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054557',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '5-6-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '5-6-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '5-6-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '5-6-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '5-6-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+      {
+        id: '5-7',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054555',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+      },
+      {
+        id: '5-8',
+        code: 'HVC.00.00.00',
+        partNo: 'V0054553',
+        type: 'AA',
+        state: 'Preliminary',
+        chineseName: '',
+        use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+        current: 'ET7:[G1.1-∞]',
+        quantity: '1.0',
+        targetWeight: '0.0',
+        actualWeight: '0.0',
+        rollUpWeight: '50.473',
+        children: [
+          {
+            id: '5-8-1',
+            code: 'HVC.15.00.00',
+            partNo: 'V0055157',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+            children: [
+              {
+                id: '5-8-1-1',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+              {
+                id: '5-8-1-2',
+                code: 'HVC.15.00.00',
+                partNo: 'V0055157',
+                type: 'AA',
+                state: 'Preliminary',
+                chineseName: '',
+                use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+                current: 'ET7:[G1.1-∞]',
+                quantity: '1.0',
+                targetWeight: '0.0',
+                actualWeight: '0.0',
+                rollUpWeight: '50.473',
+              },
+            ],
+          },
+          {
+            id: '5-8-2',
+            code: 'HVC.05.00.00',
+            partNo: 'V0055156',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+          {
+            id: '5-8-3',
+            code: 'HVC.30.00.00',
+            partNo: 'V0055160',
+            type: 'AA',
+            state: 'Preliminary',
+            chineseName: '',
+            use: '(ET7[AF04] OR ET7[AF05] OR ET7[AF06] OR ET7[AF07] OR ET7[AF08] OR ET7[AF09] )',
+            current: 'ET7:[G1.1-∞]',
+            quantity: '1.0',
+            targetWeight: '0.0',
+            actualWeight: '0.0',
+            rollUpWeight: '50.473',
+          },
+        ],
+      },
+    ],
+  },
+   ]
+      // const rows10 = { len: 1000 };
+      // for (let i = 0; i < 1000; i += 1) {
+      //   rows10[i] = {
+      //     cells: {
+      //       0: { text: 'A-' + i },
+      //       1: { text: 'B-' + i },
+      //       2: { text: 'C-' + i },
+      //       3: { text: 'D-' + i },
+      //       4: { text: 'E-' + i },
+      //       5: { text: 'F-' + i },
+      //     }
+      //   };
+      // }
+      // x_spreadsheet.locale('zh-cn');
+
+    var data = [];
+    var table = {};
+    var treeData = [];
+    // 最大层级
+    var maxLevel = 0;
+    // 默认右键功能
+    var defaultContextMenu = [
+      'copy',
+      // 'cut',
+      'paste',
+      // 'paste-value',
+      // 'paste-format',
+      'divider',
+      'insert-row',
+      'insert-column',
+      'divider',
+      'delete-row',
+      'delete-column',
+      'delete-cell-text',
+      // 'hide',
+      // 'divider',
+      // 'validation',
+      // 'divider',
+      // 'cell-printable',
+      // 'cell-non-printable',
+      // 'divider',
+      // 'cell-editable',
+      // 'cell-non-editable',
+    ];
+
+    // 自定义右键功能
+   var defineContentMenu = [
+      {
+        key: 'level', // 唯一key值
+        title: 'Add level', // 名称
+        trigger: 'level', // 回调方法名
+      },
+      { key: 'divider' }           // 分割线
+    ];
+
+    // 默认工具栏
+    var defaultToolbar = [
+      [
+        'undo', // 上一步
+        'redo', // 下一步
+        'print', // 打印
+        // 'paintformat', // 格式刷
+        // 'clearformat', // 清除刷
+      ],
+      // 'divider', //  分割线
+      // [
+      //   'format', // 格式
+      // ],
+      // 'divider', // 分割线
+      // [
+      //   'font', // 字体
+      //   'fontSize', // 字体大小
+      // ],
+      // 'divider', // 分割线
+      // [
+      //   'bold', // 加粗
+      //   'italic', // 倾斜
+      //   'underline', // x下划线
+      //   'strike', // 删除线
+      //   'textColor', // 字体颜色
+      // ],
+      // 'divider', // 分割线
+      // [
+      //   'fillColor', // 背景填充
+      //   'border', // 边框
+      //   'merge', // 合并
+      // ],
+      'divider', // 分割线
+      [
+        'align', // 左右对齐方式
+        // 'valign', // 纵向对齐方式
+        // 'textwrap', // 间隙
+      ],
+      'divider', // 分割线
+      [
+        'freeze', // 冻结
+        // 'autofilter', // 过滤
+        // 'formula', // 函数
+        'more', // 更多
+      ],
+    ];
+
+    // 自定义菜单
+    var defineToolbar = [
+      'divider',
+      [
+        {
+          key: 'save',
+          title: 'Save',
+          trigger: 'save',
+          icon:
+            'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTgzOTA1MDA5NzIzIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjM3NzQiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48L3N0eWxlPjwvZGVmcz48cGF0aCBkPSJNOTMxLjg4MiAyNTkuODgybC0xNjcuNzY0LTE2Ny43NjRBOTYgOTYgMCAwIDAgNjk2LjIzNiA2NEgxNjBDMTA2Ljk4IDY0IDY0IDEwNi45OCA2NCAxNjB2NzA0YzAgNTMuMDIgNDIuOTggOTYgOTYgOTZoNzA0YzUzLjAyIDAgOTYtNDIuOTggOTYtOTZWMzI3Ljc2NGE5NiA5NiAwIDAgMC0yOC4xMTgtNjcuODgyek01MTIgODMyYy03MC42OTIgMC0xMjgtNTcuMzA4LTEyOC0xMjggMC03MC42OTIgNTcuMzA4LTEyOCAxMjgtMTI4czEyOCA1Ny4zMDggMTI4IDEyOGMwIDcwLjY5Mi01Ny4zMDggMTI4LTEyOCAxMjh6IG0xOTItNjA5LjA0VjQyNGMwIDEzLjI1NC0xMC43NDYgMjQtMjQgMjRIMjE2Yy0xMy4yNTQgMC0yNC0xMC43NDYtMjQtMjRWMjE2YzAtMTMuMjU0IDEwLjc0Ni0yNCAyNC0yNGg0NTcuMDRjNi4zNjYgMCAxMi40NyAyLjUyOCAxNi45NyA3LjAzbDYuOTYgNi45NkEyMy45OTIgMjMuOTkyIDAgMCAxIDcwNCAyMjIuOTZ6IiBwLWlkPSIzNzc1Ij48L3BhdGg+PC9zdmc+',
+        },
+      ],
+    ];
+  var tableList = []
+  for (var i=0; i< 1; i++) {
+    tableList= [...tableList, ...tableData]
+  }
+
+  tableList.forEach((item) => {
+    data = [...data, ...convertTreeToList(item, 'id', true, 'table', colData)];
+    treeData = [...treeData, ...convertTreeToList(item, 'id', true, 'tree', colData)]
+  });
+  
+  treeData= [{level: 0}, ...treeData]
+  table['len'] = data.length + 2;
+  table[0] = retrunColdata(colData)
+  data.forEach( (item, index) => {
+    table[index + 1] = initCell(colData, item)
+  })
+  console.log('table', table)
+
+  var tree = {
+      show: true,       // 是否显示数
+      maxLength : 4,          // 树的最高层级树
+      data: handleIndexes(),
+    }
+  
+  // console.log(tree)
+  
+    var settings = {
+      mode: 'edit', // 单元格是否可以编辑: read || edit
+      showToolbar: true, // 是否显示工具箱
+      showGrid: true, // 是否显示栅格
+
+      showBottomBar: false, // 是否显示表格的底部操作项
+
+      showContextmenu: true, // 是否显示右键功能
+      defaultContextMenu: defaultContextMenu, // 默认右键菜单
+      defineContentMenu: defineContentMenu, // 自定义右键菜单
+
+      defaultToolbar: defaultToolbar, // 默认工具栏
+      defineToolbar: defineToolbar, // 自定义工具栏
+
+      tree: tree,  // 树形配置
+
+      getChangeCells: true, // 是否获取改变的单元格信息
+    };
+    
+  
+  function convertTreeToList(root, uniqueId, expands, type, colData) {
+    const stack = [];
+    const array = [];
+    const hashMap = {};
+    if (type === 'table') {
+      stack.push({...root, level: 0, expand: expands})
+      while (stack.length !== 0) {
+        const node = stack.pop();
+        visitNode(node, hashMap, array, uniqueId);
+        if (node.children) {
+          for (let i = node.children.length - 1; i >= 0; i--) {
+            stack.push({...node.children[i], level: node.level + 1, expand: expands, parent: node})
+          }
+        }
+      }
+
+    } else {
+      stack.push({ ...root, level: 0, expand: expands, childrenLen: visitNumber(root, root.children? root.children.length : 0)});
+      while (stack.length !== 0) {
+        const node = stack.pop();
+        visitNode(node, hashMap, array, uniqueId);
+        if (node.children) {
+          for (let i = node.children.length - 1; i >= 0; i--) {
+            stack.push({ ...node.children[i], level: node.level + 1, lastChild: i === node.children.length - 1 && !node.children[i].children? true: false , expand: expands, parent: node, childrenLen: visitNumber(node.children[i], node.children[i].children ? node.children[i].children.length : 0)});
+          }
+        }
+      }
+    }
+    return array;
+  }
+
+  // 处理渲染数据
+  function initCell(colData, item) {
+    const obj = {}
+    colData.forEach( (t, index) => {
+      obj[index]= {text: item[t.prop]}
+    })
+    return {cells: {...obj}} 
+  }
+
+  function retrunColdata(colData) {
+    const item = {}
+    colData.forEach( (t, index) => {
+      // console.log(t)
+      item[index]= {text: t.label}
+    })
+    return { cells: {...item}}
+  }
+
+  function visitNode(
+    node,
+    hashMap,
+    array,
+    uniqueId
+  ) {
+    // console.log(hashMap)
+    if (!hashMap[node[uniqueId]]) {
+      hashMap[node[uniqueId]] = true;
+      array.push(node);
+    }
+  }
+  
+  function visitNumber(node, num) {
+    if (!node.children|| node.children.length === 0) {
+      return num
+    }
+    node.children.forEach( t => {
+      num +=visitNumber(t, t.children? t.children.length : 0)
+    })
+    
+    return num;
+  }
+
+  function handleIndexes() {
+    arr = treeData.map((item, i) => {
+      maxLevel = item.level >= maxLevel ? item.level : maxLevel;
+      item.ri = i
+      return item
+    })
+    // console.log('获取level', new Date())
+    return arr
+  }
+
+ 
+  // console.log(table)
+  var xs =  x_spreadsheet('#x-spreadsheet-demo', settings)
+        .loadData([{ name: 'sheet-test', rows: table }]).change((cdata) => {
+          // console.log(cdata);
+          // console.log('>>>', xs.getData());
+        });
+
+        xs.on('cell-selected', (cell, ri, ci) => {
+          console.log('cell:', cell, ', ri:', ri, ', ci:', ci);
+        }).on('cell-edited', (text, ri, ci) => {
+          console.log('text:', text, ', ri: ', ri, ', ci:', ci);
+        });  // 自定义右键回调
+      if(settings.defineContentMenu) {
+        settings.defineContentMenu.forEach(it => {
+          xs.on(it.trigger, (selector, cell) => {
+            console.log(selector, cell)
+          })
+        })
+      }
+
+      if(settings.defaultContentMenu) {
+        settings.defaultContentMenu.forEach(it => {
+          xs.on(it.trigger, (selector, cell) => {
+            // console.log(selector, cell)
+          })
+        })
+      }
+
+
+      // 自定义菜单点击事件
+      if(settings.defineToolbar) {
+        settings.defineToolbar.forEach(it => {
+          if(Array.isArray(it)) {
+            it.forEach(child => {
+              xs.on(child.trigger, (data) => {
+                if (child.trigger === 'save') {
+                  // console.log(data.tree)
+                }
+              })
+            })
+          }
+        })
+      }
+
+      // xs.on('cell-selected', (cell, ri, ci) => {
+      //     console.log('cell:', cell, ', ri:', ri, ', ci:', ci);
+      //   }).on('cell-edited', (text, ri, ci) => {
+      //     console.log('text:', text, ', ri: ', ri, ', ci:', ci);
+      //   });
+
+      // setTimeout(() => {
+      //   // xs.loadData([{ rows }]);
+      //   xs.cellText(14, 3, 'cell-text').reRender();
+      //   // console.log('cell(8, 8):', xs.cell(8, 8));
+      //   // console.log('cellStyle(8, 8):', xs.cellStyle(8, 8));
+      // }, 5000);
+
+     
+    }
+
+
+ 
+  </script>
+  <!--script type="text/javascript" src="https://unpkg.com/x-data-spreadsheet@1.0.20/dist/locale/zh-cn.js"></script-->
+</body>
+</html>
