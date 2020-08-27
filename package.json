@@ -1,6 +1,6 @@
 {
   "name": "@mrzhu/sheet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a javascript xpreadsheet",
   "types": "src/index.d.ts",
   "main": "src/index.js",
