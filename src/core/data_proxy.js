@@ -1175,6 +1175,8 @@ export default class DataProxy {
 
   // treetable的折叠事件
   exchangeLevel(item) {
+    console.log(this)
+    console.log(this.tree.data)
     const ri = item.ri;
     for (let i = 0; i < item.childrenLen; i++) {
       item.expand ? this.hideLevelTree(item.ri + 1 + i, item.level, this.tree.data[item.ri + i + 1]) : this.expandLevelTree(item.ri + i + 1, item.level, this.tree.data[item.ri + 1 + i]);
@@ -1187,6 +1189,9 @@ export default class DataProxy {
 
   // 处理不是同一层级的展开
   expandLevelTree(num, level, item) {
+    console.log(num)
+    console.log(level)
+    console.log(item)
     const { rows } = this;
     if (level === item.hideLevel - 1) {
       rows.setHide(num);
@@ -1197,6 +1202,9 @@ export default class DataProxy {
 
   // 处理不是同一层级的收缩
   hideLevelTree(num, level, item) {
+    console.log(num)
+    console.log(level)
+    console.log(item)
     const { rows } = this;
     if (!item.hideLevel) {
       item.hideLevel = level + 1;
@@ -1233,6 +1241,10 @@ export default class DataProxy {
       if (oldIndex < newIndex) {
         sliceTree.forEach((it, i) => {
           it.level += level;
+          // 对折叠获得层级处理
+          if (it.hideLevel) {
+            it.hideLevel += level;
+          }
           if (i === 0) {
             it.parent = newItem.parent,
             delete it.lastChild;
@@ -1243,6 +1255,9 @@ export default class DataProxy {
       } else {
         sliceTree.forEach((it, i) => {
           it.level += level;
+          if (it.hideLevel) {
+            it.hideLevel += level
+          }
           if (i === 0) {
             it.parent = newItem.parent;
             delete it.lastChild;

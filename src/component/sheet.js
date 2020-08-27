@@ -138,9 +138,7 @@ function overlayerMousemove(evt) {
   } = cellRect;
   let { ri, ci } = cellRect;
   // TODOTREE
-  if (this.dragFlag) {
-    this.tree.moveEvt(ri, ci, top, height, width, offsetX, offsetY);
-  }
+  this.tree.moveEvt(ri, ci, top, height, width, offsetX, offsetY, this.dragFlag);
 
   if (evt.buttons !== 0) return;
   if (evt.target.className === `${cssPrefix}-resizer-hover`) return;

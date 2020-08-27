@@ -18,7 +18,7 @@ class Tree{
     renderFixHead() {
         const { data } = this;
         const { settings } = data;
-        console.log(settings)
+        // console.log(settings)
         if(hasTree(settings) && treeLevel(settings) > 0) {
             let content = `<ul class="fixedTreeLevel">`;
             for(let i=0; i < treeLevel(settings); i++){
@@ -132,7 +132,7 @@ class Tree{
             }
 
             // 确定移动鼠标的位置
-            if ((settings.tree && offsetX < 25 * settings.tree.maxLength) && !(offsetY < container.bottom && offsetY > container.top && offsetX < container.right && offsetX > container.left)) {
+            if ((settings.tree && offsetX < 25 * settings.tree.maxLength) && !(offsetX < container.right && offsetX > container.left)) {
                 const dom = document.querySelector('.x-spreadsheet-overlayer')
                 dom.style.cursor = 'move'
                 // 移动的块元素
@@ -151,14 +151,13 @@ class Tree{
                 }
             }
 
-            if(offsetY < container.bottom && offsetY > container.top && offsetX < container.right && offsetX > container.left){
+            if(offsetX < container.right && offsetX > container.left){
                 this.cb({mousedownItem: child[0], type: 'mousedown'});
             }
         }
     }
 
-    moveEvt(ri, ci, top, height, width, offsetX, offsetY) {
-        // console.log('offsetX, offsetY')
+    moveEvt(ri, ci, top, height, width, offsetX, offsetY, flag) {
         // 如果点击右侧 则阻止执行
         if(ci !== -1) return;
         const { data } = this;
@@ -177,13 +176,18 @@ class Tree{
                 right: 16 + left
             }
             const dom = document.querySelector('.x-spreadsheet-overlayer')
-            if(offsetY < container.bottom && offsetY > container.top && offsetX < container.right && offsetX > container.left){
+            if((offsetX < container.right && offsetX > container.left) && !flag){
                 dom.style.cursor = 'pointer';
             } else {
                 dom.style.cursor = 'default';
             }
-            childEl.querySelector('.line').style.display='inline-block';
-            this.removeLine(ri)
+  
+            // 拖拽是的下划线
+            if (flag) {
+                childEl.querySelector('.line').style.display='inline-block';
+                this.removeLine(ri)
+            }
+           
         }
     }
 
