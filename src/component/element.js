@@ -131,16 +131,26 @@ class Element {
   }
   */
 
-  child(arg) {
-    let ele = arg;
-    if (typeof arg === 'string') {
-      ele = document.createTextNode(arg);
-    } else if (arg instanceof Element) {
-      ele = arg.el;
-    }
-    this.el.appendChild(ele);
-    return this;
-  }
+  child(arg) {
+    let ele = arg;
+    if (typeof arg === 'string') {
+      ele = document.createTextNode(arg);
+    } else if (arg instanceof Element) {
+      ele = arg.el;
+      //TODO 防止依赖嵌套节点 解决页面append 循环依赖报错问题
+      if(ele.childNodes[0] 
+        && this.el 
+        && ele.childNodes[0].innerHTML 
+        && this.el.innerHTML
+        && ele.childNodes[0].innerHTML.indexOf(this.el.innerHTML) !== -1
+      ) {
+        return this;
+      }
+    }
+
+    this.el.appendChild(ele);
+    return this;
+  }
 
   contains(ele) {
     return this.el.contains(ele);

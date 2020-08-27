@@ -892,7 +892,7 @@ export default class DataProxy {
         // console.log(sri)
         // console.log(eri)
         rows.delete(sri, eri);
-        // TODOTREE
+        // TODOTREE 当没有树形结构，就不需要处理一下删除输的数据
         if (!this.tree || !this.tree.data[eri]) return;
 
         const len = eri - sri + 1;
@@ -1175,8 +1175,6 @@ export default class DataProxy {
 
   // treetable的折叠事件
   exchangeLevel(item) {
-    console.log(this)
-    console.log(this.tree.data)
     const ri = item.ri;
     for (let i = 0; i < item.childrenLen; i++) {
       item.expand ? this.hideLevelTree(item.ri + 1 + i, item.level, this.tree.data[item.ri + i + 1]) : this.expandLevelTree(item.ri + i + 1, item.level, this.tree.data[item.ri + 1 + i]);
@@ -1189,9 +1187,6 @@ export default class DataProxy {
 
   // 处理不是同一层级的展开
   expandLevelTree(num, level, item) {
-    console.log(num)
-    console.log(level)
-    console.log(item)
     const { rows } = this;
     if (level === item.hideLevel - 1) {
       rows.setHide(num);
@@ -1202,9 +1197,6 @@ export default class DataProxy {
 
   // 处理不是同一层级的收缩
   hideLevelTree(num, level, item) {
-    console.log(num)
-    console.log(level)
-    console.log(item)
     const { rows } = this;
     if (!item.hideLevel) {
       item.hideLevel = level + 1;
