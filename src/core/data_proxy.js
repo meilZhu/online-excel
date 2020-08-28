@@ -857,7 +857,10 @@ export default class DataProxy {
         delete tree.data[ri].lastChild
       }
       tree.data[ri].childrenLen = 1;
-      tree.data.splice(ri + 1, 0, {expand: true, childrenLen: 0, parent: tree.data[ri], level: tree.data[ri].level + 1, lastChild: true})
+      // 并给新生成的元素添加id
+      tree.data.splice(ri + 1, 0, {expand: true, childrenLen: 0, parent: tree.data[ri], level: tree.data[ri].level + 1, lastChild: true, id: `${ri}-${this.createId()}`})
+      // 给父级的长度加1
+      this.addParentLen(tree.data[ri].id, 1)
       let maxLevel = 0;
       tree.data.forEach((it, i) => {
         it.ri = i;
@@ -875,6 +878,12 @@ export default class DataProxy {
     })
   }
 
+  // TODOTREE 用于生成随机的id
+  createId() {
+    const num = Math.floor(Math.random() * 1000) + Math.ceil(Math.random() * 100)
+    return num;
+  }
+
   // type: row | column
   delete(type) {
     this.changeData(() => {
@@ -889,8 +898,6 @@ export default class DataProxy {
       let si = sri;
       let size = rsize;
       if (type === 'row') {
-        // console.log(sri)
-        // console.log(eri)
         rows.delete(sri, eri);
         // TODOTREE 当没有树形结构，就不需要处理一下删除输的数据
         if (!this.tree || !this.tree.data[eri]) return;
