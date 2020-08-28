@@ -1141,7 +1141,7 @@ export default class DataProxy {
       .forEach(it => cb(it));
   }
 
-  // TODOTREE 
+  // TODOTREE  树形结构的点击关闭和展开事件
   hideRowsOrCols(data) {
     // console.log('data', data)
     const { rows, cols, selector } = this;
@@ -1166,6 +1166,20 @@ export default class DataProxy {
       if (data.type === 'mousedown') {
         this.exchangeLevel(data.mousedownItem)
       }
+
+      if (data.type === 'levelMousedown') {
+        const {mousedownData, level} = data;
+        mousedownData.forEach( item => {
+          if (item.childrenLen && !item.expand) {
+            this.exchangeLevel(item)
+          }
+        })
+        mousedownData.forEach(t => {
+          if (t.childrenLen && t.level === level) {
+            this.exchangeLevel(t)
+          }
+        })
+      }
       
       if (data.type === 'mouseup') {
         this.dragTreeData(data.mousedownItem, data.mouseupItem)
@@ -1173,7 +1187,7 @@ export default class DataProxy {
     }
   }
 
-  // treetable的折叠事件
+  // TODOTREE treetable的折叠事件
   exchangeLevel(item) {
     const ri = item.ri;
     for (let i = 0; i < item.childrenLen; i++) {

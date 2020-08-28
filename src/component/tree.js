@@ -8,8 +8,7 @@ class Tree{
         this.el = el;
         this.data = data;
         this.cb = cb;
-        // 拖拽移动时，按钮按下的数据信息\
-        this.isMove = false;
+        // 拖拽移动时，按钮按下的数据信息
         this.move = {}
         this.renderFixHead();
     }
@@ -120,7 +119,9 @@ class Tree{
         const { settings } = data;
         let child = settings.tree && settings.tree.data ? settings.tree.data.filter(item => item.ri === ri) : []; 
         this.move =  child[0];
+        // 以下是对树形结构的处理
         if(child.length) {
+            // 以下是对树形结构的处理
             let childEl = this.el.querySelector(`[attr="${ri}"]`);
             let left = parseInt(childEl.style.left);
             let top = parseInt(childEl.style.top) + 25;
@@ -154,7 +155,14 @@ class Tree{
             if(offsetX < container.right && offsetX > container.left){
                 this.cb({mousedownItem: child[0], type: 'mousedown'});
             }
+            return;
         }
+
+        // 这里是对树形结构上方的层级的点击处理
+        let level= Math.floor(offsetX/25)
+        this.cb({mousedownData: this.data.settings.tree.data, type: 'levelMousedown', level: level})
+
+
     }
 
     moveEvt(ri, ci, top, height, width, offsetX, offsetY, flag) {
@@ -187,8 +195,11 @@ class Tree{
                 childEl.querySelector('.line').style.display='inline-block';
                 this.removeLine(ri)
             }
-           
+           return;
         }
+
+        const dom = document.querySelector('.x-spreadsheet-overlayer')
+        dom.style.cursor = 'pointer'
     }
 
     // 移除多余的下划线
